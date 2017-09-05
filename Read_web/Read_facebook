@@ -1,0 +1,18 @@
+# connecting to Facebook
+
+#https://developers.facebook.com/tools/explorer
+
+accessToken <-"EAACEdEose0cBAG6Br8me7NAiRGtnaK0NZBuFXA75eFANGDUOLotThDmXRGlo2x7G8ZAYFw9a9SKuJgeCMLPNqN07XJLGsmmv0Cvq6jImKi1jslSbmruQ1n8pxrMQADI44VsUpIfEzbgOyUROaa7608X8RBe5ld09ktJRo6z5hphsIgTnsJRBGJl58tSagorika4ZD" # Get data from a company page, extract data from a company's page on facebook
+flipkartPage <-getPage(page="flipkart",
+                       token=accessToken,
+                       n=10)
+#take the name from the link
+
+
+flipkartPage <-getPage(page="flipkart",
+                       token=accessToken,
+                       n=150)
+
+pages<- getURL("")
+library(XML)
+overall_matces= reahHTMLTable(pages, header=T, which=2, string)
