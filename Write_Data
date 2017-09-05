@@ -1,0 +1,98 @@
+one_row <-bank_ins[,3]
+ +
+ +bank_ins.smpl <- bank_ins[1:1000,]
+ +## Save the R object
+ +save(bank_ins,file="bank_ins.smpl.Rda")
+ +# remove
+ +rm(bank_ins.smpl)
+ +rm(bank_ins)
+ +## Load the data back
+ +
+ +names(bank_ins)
+ +
+ +load("bank_ins.smpl.Rda")
+ +
+ +## install and load datasets package
+ +install.packages("datasets")
+ +require(datasets)
+ +
+ +library(help="datasets")
+ +## Save the data as a csv file
+ +
+ +tt <- mtcars
+ +
+ +names(tt)
+ +
+ +write.csv(mtcars, "mtcars.csv")
+ +
+ +tt$carmodel <- row.names(mtcars)
+ +row.names(tt) <- NULL
+ +
+ +write.csv(tt, "C:\\Ram\\R for Data Science\\data\\mtcars.csv",
+ +          row.names=F
+ +)
+ +
+ +
+ +## Save the data as a Tab Delimited file
+ +write.table(mtcars, "mtcars.txt", sep = '%', quote = FALSE, row.names=F)
+ +
+ +## write to file without column names
+ +
+ +write.table(mtcars, 
+ +            "mtcars_noheader.txt", 
+ +            sep = '%', 
+ +            quote = FALSE, 
+ +            row.names=F,
+ +            col.names = F)
+ +
+ +write.csv(mtcars, 
+ +            "mtcars_noheader1.txt", 
+ +            quote = FALSE, 
+ +            row.names=F,
+ +            col.names = F)
+ +
+ +write.table(mtcars, 
+ +            "mtcars_noheadercsv.csv", 
+ +            sep = ',', 
+ +            quote = FALSE, 
+ +            row.names=F,
+ +            col.names = F)
+ +
+ +
+ +attach()
+ +
+ +names(male)
+ +
+ +summary(Age)
+ +
+ +rm(Age)
+ +
+ +Age
+ +
+ +mean(male$Age)
+ +
+ +attach(male)
+ +
+ +mean(Age)
+ +
+ +myfile <- read.table(text="MyName Age
+ +                           Ram 38
+ +                           Shyam 25", header=T)
+ +
+ +write.csv(myfile,file="myfile.csv")
+ +
+ +write.table(myfile, 
+ +            "myfile.txt", 
+ +            sep = '$', 
+ +            row.names=F,
+ +            col.names = F)
+ +
+ +students <- data.frame(Name= c("Ram","Dinesh","Mona","Sona"),
+ +                      Gender=c("Male","Male","Female","Female"),
+ +                      Age =rnorm(4,50,20))
+ +View(students)
+ +
+ +write.csv(students,
+ +          file="students.csv",
+ +          row.names = F)
+ +getwd()
