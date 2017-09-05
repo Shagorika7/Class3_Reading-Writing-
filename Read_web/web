@@ -1,0 +1,6 @@
++## Read data from the web
+ +## You can directly read a file directly from the internet by specifying the URL
+ +input_webdata.Sagorika <- read.table("https://data.oecd.org/healthstat/infant-mortality-rates.htm")
+ +str(input_webdata.Sagorika)
+ +
+ +input_webdata.Sagorika$
