@@ -1,3 +1,5 @@
+##################  Reading Data  #########################
+
 
 ## Reading data from program editor
 
@@ -40,7 +42,7 @@ head(Appl.num)
 
 selected <- sample(Appl.num,60000,replace = F)
 
-selected.df <- data.frame(selected)
+selected.Sagorika <- data.frame(selected)
 
 
 LETTERS[1:4]
@@ -48,53 +50,53 @@ LETTERS[1:4]
 sample(letters[1:4], 10, replace = T)
 
 ## Create a Data Frame
-input.df <- data.frame(ID = 1:10, 
+input.Sagorika <- data.frame(ID = 1:10, 
                        Class = sample(letters[1:4], 10, replace = TRUE),
                        Value = seq(1:5))
 ## View the data frame
-View(input.df)
+View(input.Sagorika)
 # we see that the data frame has 3 columns named ID, Class, and Value
 # The data frame also has 10 rows of data
 
 ## See the column names
-colnames(input.df)
-names(input.df)
+colnames(input.Sagorika)
+names(input.Sagorika)
 
-row.names(input.df)
+row.names(input.Sagorika)
 ## See the dimensions
-dim(input.df)
+dim(input.Sagorika)
 
 ## Set the Working Directory
 getwd()
 
 ## Reading data from Comma separated file (csv)
-input_csv.df <- read.csv(file="C:\\Ram\\R for Data Science\\data\\binary.csv")
+input_csv.Sagorika <- read.csv(file="C:\\Ram\\R for Data Science\\data\\binary.csv")
 
-input_csv.df <- read.csv(file="C:\\Moksha\\MICA\\PGP2\\AMMA\\Data\\data_2017\\binary.csv")
+input_csv.Sagorika <- read.csv(file="C:\\Moksha\\MICA\\PGP2\\AMMA\\Data\\data_2017\\binary.csv")
 # reset directory and read file
 setwd("C:\\Ram\\R for Data Science\\data")
-input_csv.df <- read.csv("binary.csv",header = T)
+input_csv.Sagorika <- read.csv("binary.csv",header = T)
 
 getwd()
 
 
 ## See the structure of the data
-str(input_csv.df)
+str(input_csv.Sagorika)
 ## reading the file to validate the data 
 
-sum(input_csv.df$gre)
+sum(input_csv.Sagorika$gre)
 
 ## Reading Date Values
-input_wthdt.df <- read.csv("binary_withdate.csv")
-str(input_wthdt.df)
+input_wthdt.Sagorika <- read.csv("binary_withdate.csv")
+str(input_wthdt.Sagorika)
 
-tab <- data.frame(table(input_wthdt.df$application_date))
+tab <- data.frame(table(input_wthdt.Sagorika$application_date))
 sum(tab$Freq)
 # we see the date field has been read as factor
 
 # read Date as Factor
-input_wthdt.df <- read.csv("binary_withdate.csv", stringsAsFactors = F)
-str(input_wthdt.df)
+input_wthdt.Sagorika <- read.csv("binary_withdate.csv", stringsAsFactors = F)
+str(input_wthdt.Sagorika)
 
 ## working with dates
 d <-"2004-12-03"
@@ -144,24 +146,24 @@ age <- difftime(Sys.Date(),dob,units="days")
 as.integer(as.numeric(age)/365)
 
 ## Correct the date format
-input_wthdt.df$application_date1 <- as.Date(input_wthdt.df$application_date, format="%m/%d/%Y")
+input_wthdt.Sagorika$application_date1 <- as.Date(input_wthdt.Sagorika$application_date, format="%m/%d/%Y")
 
-str(input_wthdt.df)
+str(input_wthdt.Sagorika)
 
 ## Read the data specifying the Class of the data
-input_wthdt.df1 <- read.csv("binary_withdate.csv", colClasses=c(application_date = 'myDate'))
-str(input_wthdt.df1)
+input_wthdt.Sagorika1 <- read.csv("binary_withdate.csv", colClasses=c(application_date = 'myDate'))
+str(input_wthdt.Sagorika1)
 
 
 ## Read data from the web
 ## You can directly read a file directly from the internet by specifying the URL
-input_webdata.df <- read.table("http://www.stats.ox.ac.uk/pub/datasets/csb/ch11b.dat")
-str(input_webdata.df)
+input_webdata.Sagorika <- read.table("http://www.stats.ox.ac.uk/pub/datasets/csb/ch11b.dat")
+str(input_webdata.Sagorika)
 
-input_webdata.df$
+input_webdata.Sagorika$
 
 ## Read the first few records of a dataset
-head(input_webdata.df)
+head(input_webdata.Sagorika)
 ## The first 6 rows of data have been displayed
 
 ## Ques 1 : What is we need to display the first 10 rows instead?
@@ -172,17 +174,17 @@ csv_file <- read.table(file="C:\\Ram\\General 20150804 v1\\Trainings\\R Programm
                                 sep = ',')
 
 ## Read a Tab Delimited file
-input_tabdlmtd.df <- read.table(file="C:\\Ram\\R for Data Science\\data\\tab_delimited_data.txt",
+input_tabdlmtd.Sagorika <- read.table(file="C:\\Ram\\R for Data Science\\data\\tab_delimited_data.txt",
                                 header = TRUE, 
                                 sep = '\t')
 
-head(input_tabdlmtd.df)
+head(input_tabdlmtd.Sagorika)
 
 ## We can use the same functions as with a csv file 
 ## to read dates and modify formats with a tab-delimited file as well
 
 
-input_dollar.df <- read.table(file="C:\\Ram\\R for Data Science\\data\\dollar_delimited_data.txt",
+input_dollar.Sagorika <- read.table(file="C:\\Ram\\R for Data Science\\data\\dollar_delimited_data.txt",
                                 header = TRUE, 
                                 sep = '$')
 
@@ -209,9 +211,9 @@ names(spss)
 
 table(spss$PROTEIN)
 
-library(help=sqldf)
+library(help=sqlSagorika)
 
-sum.tb <- sqldf("select PROTEIN,count(*) 
+sum.tb <- sqlSagorika("select PROTEIN,count(*) 
                         from spss 
                  where PROTEIN>1
                 group by PROTEIN")
@@ -225,21 +227,3 @@ library(RCurl)
 library(rjson)
 
 library(help=Rfacebook)
-# connecting to Facebook
-
-#https://developers.facebook.com/tools/explorer
-
-accessToken <-"EAACEdEose0cBAG6Br8me7NAiRGtnaK0NZBuFXA75eFANGDUOLotThDmXRGlo2x7G8ZAYFw9a9SKuJgeCMLPNqN07XJLGsmmv0Cvq6jImKi1jslSbmruQ1n8pxrMQADI44VsUpIfEzbgOyUROaa7608X8RBe5ld09ktJRo6z5hphsIgTnsJRBGJl58tdf4ZD" # Get data from a company page, extract data from a company's page on facebook
-flipkartPage <-getPage(page="flipkart",
-                       token=accessToken,
-                       n=10)
-#take the name from the link
-
-
-flipkartPage <-getPage(page="flipkart",
-                       token=accessToken,
-                       n=150)
-
-pages<- getURL("")
-library(XML)
-overall_matces= reahHTMLTable(pages, header=T, which=2, string)
