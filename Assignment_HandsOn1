@@ -7,7 +7,7 @@ install.packages("data.table")
 install.packages("datasets")
 library("datasets")
 
-setwd("G:\\THE MICA EPISODE\\2nd YEAR\AMMA\\Hands on Exercises")
+setwd("~/Downloads")
 
 #Storing the women data in sample_women data frame
 
