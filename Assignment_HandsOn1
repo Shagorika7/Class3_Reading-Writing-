@@ -1,0 +1,25 @@
+#Hands On Exercise 1 
+
+#Start
+#Installing the required packages
+
+install.packages("data.table")
+install.packages("datasets")
+library("datasets")
+
+setwd("G:\\THE MICA EPISODE\\2nd YEAR\AMMA\\Hands on Exercises")
+
+#Storing the women data in sample_women data frame
+
+sample_women<-data.frame(women)
+
+#Finding the average weight and height of the women in the data frame 
+
+mean.height=mean(women$height)
+mean.weight=mean(women$weight)
+
+#Finding the number of women whose height is greater than average and whose weight is less than the average and storing it in a new data frame
+
+women_df<-subset(women,height>mean.height & weight<mean.weight)
+
+#There are no such women 
