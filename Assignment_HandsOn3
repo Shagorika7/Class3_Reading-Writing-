@@ -4,7 +4,7 @@
 
 #Setting the working directory
 
-setwd("G:\\THE MICA EPISODE\\2nd YEAR\AMMA\\Hands on Exercises")
+setwd("~/Downloads")
 
 #Question 1 Start
 
